@@ -1,6 +1,14 @@
 """Створіть разважальний чат-бот на Python. Даний бот може рекомендувати фільми, музику,
 ігри за жанрами, анекдоти, цікаві історії, а також надати можливість пограти в гру.
-За бажанням можете додати додаткові можливості. """
+За бажанням можете додати додаткові можливості.
+
+Для роботи потрібно у терміналі встановити залежності:
+pip install emoji
+pip install colorama
+pip install pyjokes
+pip install translate
+pip install art
+"""
 
 import random
 from colorama import Fore, Back, Style, init
