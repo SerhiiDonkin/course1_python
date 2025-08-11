@@ -148,22 +148,22 @@ def pole_chudes():
     }
 
     random_choice, description = random.choice(list(text_dict.items()))
-    print(f"{Fore.GREEN}{description}")
+    print(f"{Fore.GREEN}{description}{Style.RESET_ALL}")
     board_with_word_list = ['_'] * len(random_choice)
     guessed_letters = []
     while '_' in board_with_word_list:
-        print(f"\nСлово: {Fore.BLUE}{' '.join(board_with_word_list)}")
+        print(f"\nСлово: {Fore.BLUE}{' '.join(board_with_word_list)}{Style.RESET_ALL}")
         user_input = input("Введіть букву або ціле слово: ").lower()
         if not user_input.isalpha() and not "'" in user_input:
             print(f"{Fore.RED}Некоректний ввід. Будь ласка, введіть букву або слово.")
             continue
         if user_input == random_choice:
-            print(f"{Fore.GREEN}Вітаю! Ви вгадали ціле слово і це справді "
-                  f"{Fore.BLUE}{random_choice}!")
+            print(f"{Fore.GREEN}Вітаю! Ви вгадали ціле слово і це справді{Style.RESET_ALL} "
+                  f"{Fore.BLUE}{random_choice}.{Style.RESET_ALL}")
             break
         elif len(user_input) == 1:
             if user_input in guessed_letters:
-                print(f"{Fore.YELLOW}Цю літеру '{user_input}' ви вже вводили. Спробуйте іншу.")
+                print(f"{Fore.YELLOW}Цю літеру '{user_input}' ви вже вводили. Спробуйте іншу.{Style.RESET_ALL}")
                 continue
             guessed_letters.append(user_input)
             if user_input in random_choice:
@@ -172,11 +172,11 @@ def pole_chudes():
                     if letter == user_input:
                         board_with_word_list[position] = user_input
             else:
-                print(f"{Fore.RED}На жаль, літери '{user_input}' у слові немає.")
+                print(f"{Fore.RED}На жаль, літери '{user_input}' у слові немає.{Style.RESET_ALL}")
         else:
-            print(f"{Fore.RED}Неправильне слово. Спробуйте ще раз.")
+            print(f"{Fore.RED}Неправильне слово. Спробуйте ще раз.{Style.RESET_ALL}")
     else:
-        print(f"{Fore.GREEN}Вітаю! Ви відгадали слово: {random_choice}!")
+        print(f"{Fore.GREEN}Вітаю! Ви відгадали слово: {random_choice}!{Style.RESET_ALL}")
     print("Гру завершено!")
 
 
