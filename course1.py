@@ -167,7 +167,7 @@ def pole_chudes():
                 continue
             guessed_letters.append(user_input)
             if user_input in random_choice:
-                print(f"{Fore.CYAN}Так, літера '{user_input}' є в слові!")
+                print(f"{Fore.CYAN}Так, літера '{user_input}' є в слові!{Style.RESET_ALL}")
                 for position, letter in enumerate(random_choice):
                     if letter == user_input:
                         board_with_word_list[position] = user_input
